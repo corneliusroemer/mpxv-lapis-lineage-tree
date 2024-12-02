@@ -1,5 +1,4 @@
 # %%
-# Clone the repository to ./lineage-designations/
 import os
 import pathlib
 from typing import Any
