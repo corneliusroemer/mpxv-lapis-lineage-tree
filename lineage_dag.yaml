@@ -1,7 +1,6 @@
 A:
   aliases: []
-  parents:
-  - None
+  parents: []
 A.1:
   aliases: []
   parents:
@@ -215,3 +214,9 @@ F.6:
   - A.1.1.1.20.6
   parents:
   - B.1.20
+None:
+  aliases:
+  - Unknown
+  - Unassigned
+  - Outgroup
+  parents: []

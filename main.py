@@ -10,7 +10,10 @@ from git import Repo
 
 REPO_URL = "https://github.com/mpxv-lineages/lineage-designation"
 LOCAL_DIR = "./lineage-designation/"
-repo = Repo.clone_from(REPO_URL, LOCAL_DIR)
+try:
+    repo = Repo.clone_from(REPO_URL, LOCAL_DIR)
+except:
+    print("Repo already cloned")
 
 # %%
 
@@ -41,7 +44,7 @@ for filename in os.listdir(input_folder):
                 }
 
             # Add parent if available
-            if parent:
+            if parent and parent != "None":
                 lineage_dag[name]["parents"].append(parent)
 
             # Add aliases
@@ -49,6 +52,12 @@ for filename in os.listdir(input_folder):
                 lineage_dag[name]["aliases"].append(alias)
             if unaliased_name and unaliased_name != name:
                 lineage_dag[name]["aliases"].append(unaliased_name)
+
+# Add some extra fields like None
+lineage_dag["None"] = {
+    "parents": [],
+    "aliases": ["Unknown", "Unassigned", "Outgroup"],
+}
 
 # Write the DAG to a consolidated YAML file
 with open(output_file, "w") as output:

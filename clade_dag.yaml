@@ -1,7 +1,6 @@
 I:
   aliases: []
-  parents:
-  - None
+  parents: []
 Ia:
   aliases: []
   parents:
@@ -12,8 +11,7 @@ Ib:
   - I
 II:
   aliases: []
-  parents:
-  - None
+  parents: []
 IIa:
   aliases: []
   parents:
@@ -22,3 +20,9 @@ IIb:
   aliases: []
   parents:
   - II
+None:
+  aliases:
+  - Unknown
+  - Unassigned
+  - Outgroup
+  parents: []
